@@ -21,7 +21,7 @@ resource "aws_security_group" "Jenkins-sg" {
     description = "Allow TLS inbound rules"
 
     ingress = [ 
-        for port in[ 22, 80, 8080, 443, 9000 ] : {
+        for port in [ 22, 80, 8080, 443, 9000 ] : {
           description      = "inbound rules"
           from_port        = port
           to_port          = port
@@ -32,7 +32,7 @@ resource "aws_security_group" "Jenkins-sg" {
           security_group   = []
           self             = false
         }
-     ]
+    ]
     egress {
     from_port        = 0
     to_port          = 0
